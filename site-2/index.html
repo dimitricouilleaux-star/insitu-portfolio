@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSITU | Elisa Gobeyn - Graphiste Freelance à Castres</title>
+    <meta name="description" content="INSITU par Elisa Gobeyn, graphiste freelance à Castres (Tarn). Création d'identités visuelles, logos et supports de communication sur-mesure pour indépendants et entreprises.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- En-tête / Navigation -->
+    <header>
+        <div class="logo">INSITU.</div>
+        
+        <!-- Nouveau : Bouton Burger pour mobile -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-links">
+            <ul>
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#propos" class="nav-link">À propos</a></li>
+                <li><a href="#prestations" class="nav-link">Prestations</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="btn-contact nav-link">Contact / Devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content reveal">
+            <h1>Donnez vie à votre image.</h1>
+            <p>Graphiste freelance basée à Castres, je crée des identités visuelles et des supports de communication sur-mesure pour les indépendants et les petites entreprises.</p>
+            <a href="#portfolio" class="btn-primary">Voir mes projets</a>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="propos">
+        <div class="container propos-grid">
+            <div class="propos-text reveal">
+                <h2>Qui suis-je ?</h2>
+                <p>Je suis Elisa Gobeyn, la créatrice derrière INSITU. Mon objectif ? Vous aider à mettre en valeur votre savoir-faire grâce à un design vivant, coloré et créatif.</p>
+                <p>J'aime l'expérimentation de matières et les contrastes forts pour faire ressortir l'essence de votre projet, loin des templates génériques et froids.</p>
+            </div>
+            <div class="propos-image reveal">
+                <div class="image-placeholder">Photo d'Elisa</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Prestations -->
+    <section id="prestations" class="bg-darker">
+        <div class="container">
+            <h2 class="reveal">Mes Prestations</h2>
+            <div class="services-grid">
+                <div class="card reveal">
+                    <h3>Identité Visuelle</h3>
+                    <p>Création de logos, chartes graphiques complètes et choix colorimétriques pour une image qui vous ressemble.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Supports Print</h3>
+                    <p>Cartes de visite, flyers, affiches, brochures... Tout ce qu'il faut pour votre communication physique.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Visuels & Réseaux</h3>
+                    <p>Déclinaison de votre identité pour vos réseaux sociaux et création de templates sur-mesure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Portfolio -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="reveal">Portfolio</h2>
+            <p class="subtitle reveal">Découvrez mes dernières expérimentations et réalisations.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal"><span>Projet 1</span></div>
+                <div class="portfolio-item reveal"><span>Projet 2</span></div>
+                <div class="portfolio-item reveal"><span>Projet 3</span></div>
+                <div class="portfolio-item reveal"><span>Projet 4</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="bg-darker">
+        <div class="container contact-wrapper">
+            <div class="contact-info reveal">
+                <h2>Discutons de votre projet</h2>
+                <p>Prêt à collaborer ? Remplissez le formulaire ou contactez-moi directement sur mes réseaux.</p>
+                <div class="socials">
+                    <a href="https://instagram.com/madeinsitu" target="_blank" rel="noopener">Instagram (@madeinsitu)</a>
+                    <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            
+            <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" class="contact-form reveal">
+                <div class="form-group">
+                    <label for="name">Nom / Entreprise</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Parlez-moi de votre besoin</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Envoyer la demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 INSITU - Elisa Gobeyn.</p>
+            <p><a href="mentions-legales.html">Mentions Légales</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts pour l'interactivité -->
+    <script>
+        // 1. Gestion du Menu Burger
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-link');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+
+        // Fermer le menu quand on clique sur un lien (sur mobile)
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            });
+        });
+
+        // 2. Animation au défilement (Scroll Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Déclenchement à 100px avant d'entrer dans l'écran
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Déclencher une fois au chargement
+    </script>
+</body>
+</html>

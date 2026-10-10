@@ -1,0 +1,544 @@
+/* --- VARIABLES --- */
+:root {
+    /* Couleurs de la charte INSITU */
+    --black: #23201F;
+    --coral: #E5293E;
+    --cream: #F4F0EB;
+    --aubergine: #480E28;
+    
+    /* Polices */
+    --font-text: 'Inter', sans-serif;
+    --font-title: 'Inter', sans-serif; /* En attendant d'importer la police Hightone manuellement */
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--black);
+    color: var(--cream);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--coral);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.bg-darker {
+    background-color: #1a1817; /* Légèrement plus foncé que --black pour contraster les sections */
+}
+
+/* --- BOUTONS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--coral);
+    color: var(--cream);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--aubergine);
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(35, 32, 31, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--coral);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.btn-contact {
+    border: 1px solid var(--coral);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--coral);
+}
+
+.btn-contact:hover {
+    background-color: var(--coral);
+    color: var(--cream);
+}
+
+/* --- SECTIONS (Général) --- */
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--coral);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* --- HERO (Accueil) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--cream);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #ccc;
+}
+
+/* --- A PROPOS --- */
+.propos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: var(--aubergine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--cream);
+    font-weight: 600;
+}
+
+/* --- PRESTATIONS --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--black);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--coral);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--cream);
+}
+
+/* --- PORTFOLIO --- */
+.subtitle {
+    text-align: center;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    color: #aaa;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    aspect-ratio: 16/9;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.portfolio-item:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* --- CONTACT --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.socials a {
+    font-size: 1.1rem;
+    display: inline-block;
+    border-left: 2px solid var(--coral);
+    padding-left: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--black);
+    border: 1px solid #444;
+    color: var(--cream);
+    border-radius: 4px;
+    font-family: var(--font-text);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--coral);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #111;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.footer-content a {
+    color: #666;
+}
+
+.footer-content a:hover {
+    color: var(--coral);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .propos-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        display: none; /* À remplacer par un menu burger en JS plus tard */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* --- AMÉLIORATION PORTFOLIO (HOVER) --- */
+.portfolio-item {
+    aspect-ratio: 16/9;
+    background-color: var(--aubergine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio-item span {
+    position: absolute;
+    bottom: -50px;
+    background: rgba(35, 32, 31, 0.9);
+    color: var(--cream);
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    transition: bottom 0.3s ease;
+}
+
+.portfolio-item:hover span {
+    bottom: 0;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 10px 20px rgba(229, 41, 62, 0.2); /* Léger halo rouge corail */
+}
+
+/* --- ANIMATIONS SCROLL REVEAL --- */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- MENU BURGER & RESPONSIVE --- */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cream);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .propos-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Afficher le burger */
+    .burger {
+        display: block;
+    }
+
+    /* Menu mobile caché par défaut (hors de l'écran à droite) */
+    nav#nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--black);
+        border-left: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+    }
+
+    nav#nav-links ul {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    /* Classe active ajoutée par le JS pour ouvrir le menu */
+    nav#nav-links.active {
+        right: 0;
+    }
+
+    /* Animation de l'icône burger quand le menu est ouvert */
+    .burger.toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .burger.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- CORRECTION SECTION 3 (PRESTATIONS) --- */
+    .services-grid {
+        grid-template-columns: 1fr; /* Force 1 seule colonne au lieu de minmax(300px) */
+    }
+    
+    .card {
+        text-align: center; /* Centre le texte des cartes pour un meilleur rendu mobile */
+    }
+
+    .propos-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* --- MENU BURGER --- */
+    .burger {
+        display: block;
+        z-index: 1001; /* Reste au-dessus du menu */
+    }
+
+    nav#nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%; /* Prend tout l'écran sur mobile */
+        height: 100vh;
+        background-color: rgba(35, 32, 31, 0.98); /* Fond presque noir et opaque */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+        z-index: 999;
+    }
+
+    /* CORRECTION DU MENU VIDE */
+    nav#nav-links ul {
+        display: flex !important; /* Écrase l'ancien display:none */
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    nav#nav-links.active {
+        right: 0;
+    }
+
+    /* Animation de l'icône burger */
+    .burger.toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .burger.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* --- DÉCORATION DES LIENS DU MENU MOBILE --- */
+    
+    nav#nav-links ul li {
+        width: 100%;
+    }
+
+    nav#nav-links a.nav-link {
+        font-size: 1.8rem; /* Texte plus grand */
+        font-weight: 800;
+        text-transform: uppercase; /* En majuscules */
+        letter-spacing: 3px; /* Espacement entre les lettres */
+        position: relative;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    /* Petit trait décoratif qui apparaît en dessous (Corail) */
+    nav#nav-links a.nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background-color: var(--coral);
+        transition: width 0.3s ease;
+    }
+
+    /* Le trait s'agrandit au clic/survol */
+    nav#nav-links a.nav-link:hover::after,
+    nav#nav-links a.nav-link:active::after {
+        width: 40px;
+    }
+
+    /* --- BOUTON CONTACT DANS LE MENU MOBILE --- */
+    nav#nav-links a.btn-contact {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        background-color: var(--coral); /* Fond plein */
+        color: var(--cream) !important;
+        padding: 15px 40px;
+        border-radius: 50px; /* Forme de pilule arrondie */
+        border: none;
+        margin-top: 1rem;
+        box-shadow: 0 10px 20px rgba(229, 41, 62, 0.2);
+    }
+
+    /* On enlève le petit trait pour le bouton contact */
+    nav#nav-links a.btn-contact::after {
+        display: none;
+    }
