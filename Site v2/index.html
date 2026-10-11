@@ -226,17 +226,25 @@
 
     <!-- SCRIPTS -->
     <script>
-        // --- NOUVEAU : Forcer le retour en haut au chargement ---
+        // --- NOUVEAU : Forcer le retour en haut (Correction Mobile Absolue) ---
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
+        
+        // 1. On nettoie l'URL pour enlever tout #contact caché
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
+        }
+        
+        // 2. On remonte immédiatement
         window.scrollTo(0, 0);
-        // --------------------------------------------------------
-
         
-        
-
-
+        // 3. On remonte encore une fois une fraction de seconde plus tard 
+        // pour contrer les navigateurs mobiles qui forcent le scroll après le chargement
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 150);
+    
 
         // 1. Menu Burger
         const burgerBtn = document.getElementById('burger-btn');
