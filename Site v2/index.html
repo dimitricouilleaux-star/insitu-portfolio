@@ -43,12 +43,9 @@
             
             <div class="hero-footer">
                 <div class="hero-role mask">
-                    <p class="reveal-text delay-4">Direction Artistique & Identité<br>Basé dans le Tarn (Soual / Castres)</p>
+                    <p class="reveal-text delay-4">Direction Artistique & Identité<br>Basé dans le Tarn</p>
                 </div>
-                <div class="hero-scroll mask">
-                    <p class="reveal-text delay-5">Défiler pour explorer</p>
-                    <div class="scroll-line reveal-fade delay-5"></div>
-                </div>
+                
             </div>
         </section>
 
@@ -201,7 +198,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Localisation</h4>
-                    <p>Soual / Castres (Tarn)</p>
+                    <p>Tarn</p>
                 </div>
                 <div class="footer-col">
                     <h4>Légal</h4>
@@ -229,6 +226,18 @@
 
     <!-- SCRIPTS -->
     <script>
+        // --- NOUVEAU : Forcer le retour en haut au chargement ---
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+        // --------------------------------------------------------
+
+        
+        
+
+
+
         // 1. Menu Burger
         const burgerBtn = document.getElementById('burger-btn');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -299,6 +308,9 @@
                 }
             }
         });
+
+
+
     </script>
 </body>
 </html>

@@ -10,15 +10,15 @@
 }
 
 :root {
-    /* Charte INSITU - Adaptée pour le Light Mode */
-    --white: #FFFFFF;
-    --black: #23201F;
+    /* Charte INSITU - Orientée Noir Pur */
+    --pure-black: #000000;
+    --brand-black: #23201F;
     --coral: #E5293E;
     --cream: #F4F0EB;
     --aubergine: #480E28;
     
-    /* Couleur pour les bordures légères */
-    --border-light: rgba(35, 32, 31, 0.1);
+    /* Couleur pour les bordures légères sur fond noir */
+    --border-light: rgba(244, 240, 235, 0.15);
 
     --font-text: 'Inter', sans-serif;
     --font-logo: 'Hightone', sans-serif;
@@ -38,13 +38,13 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--white);
+    background-color: var(--pure-black);
 }
 
 body {
     font-family: var(--font-text);
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--pure-black);
+    color: var(--cream);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
@@ -68,7 +68,6 @@ h1, h2, h3, h4 {
 }
 
 .text-coral { color: var(--coral); }
-.text-dark { color: var(--black) !important; }
 
 .mask {
     overflow: hidden;
@@ -88,8 +87,7 @@ h1, h2, h3, h4 {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    /* Effet verre dépoli très premium sur fond clair */
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-light);
 }
@@ -97,7 +95,7 @@ h1, h2, h3, h4 {
 .logo {
     font-family: var(--font-logo);
     font-size: 2.2rem;
-    color: var(--black);
+    color: var(--cream);
     letter-spacing: 1px;
 }
 
@@ -110,14 +108,14 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 101;
+    z-index: 101; /* S'assure qu'il reste au-dessus de tout */
 }
 
 .burger-btn span {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--black);
+    background-color: var(--cream); /* Force la couleur claire */
     transition: transform 0.5s var(--ease-out-expo), opacity 0.5s;
 }
 
@@ -128,7 +126,7 @@ h1, h2, h3, h4 {
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background-color: var(--cream);
+    background-color: var(--brand-black);
     z-index: 90;
     display: flex;
     align-items: center;
@@ -152,8 +150,10 @@ h1, h2, h3, h4 {
     font-weight: 900;
     letter-spacing: -2px;
     display: inline-block;
-    color: var(--black);
+    color: var(--cream);
     transition: color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
+    /* La solution : on ajoute de l'espace à droite pour éviter la coupure au survol */
+    padding-right: 40px; 
 }
 
 .menu-link:hover {
@@ -171,13 +171,13 @@ h1, h2, h3, h4 {
     justify-content: center;
     padding: 0 4vw;
     position: relative;
-    background-color: var(--white);
+    background-color: var(--pure-black);
 }
 
 .hero h1 {
     font-size: clamp(4rem, 13vw, 12rem);
     letter-spacing: -4px;
-    color: var(--black);
+    color: var(--cream);
 }
 
 .hero-footer {
@@ -193,7 +193,7 @@ h1, h2, h3, h4 {
 .hero-role p {
     font-size: 1rem;
     font-weight: 400;
-    color: #666;
+    color: #999;
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    color: #888;
+    color: #999;
 }
 
 .scroll-line {
@@ -239,7 +239,7 @@ h1, h2, h3, h4 {
 
 .bg-coral {
     background-color: var(--coral);
-    color: var(--white);
+    color: var(--cream);
     border: none;
 }
 
@@ -265,7 +265,7 @@ h1, h2, h3, h4 {
 ========================================= */
 .portfolio {
     padding: 15vh 4vw;
-    background-color: var(--white);
+    background-color: var(--pure-black);
 }
 
 .section-header {
@@ -277,7 +277,7 @@ h1, h2, h3, h4 {
     padding-bottom: 2vh;
 }
 
-.section-header h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--black); }
+.section-header h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--cream); }
 .section-header p { font-size: 1rem; color: #888; }
 
 .grid-container {
@@ -323,7 +323,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--black);
+    background-color: var(--cream);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.6s var(--ease-out-expo);
@@ -332,7 +332,7 @@ h1, h2, h3, h4 {
 .project-item:hover .project-image { transform: scale(0.97); }
 .project-item:hover .project-info::before { transform: scaleX(1); }
 
-.project-info h3 { font-size: 1.2rem; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--black); }
+.project-info h3 { font-size: 1.2rem; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--cream); }
 .project-info span { font-size: 0.9rem; color: var(--coral); text-transform: uppercase; letter-spacing: 1px; }
 
 /* =========================================
@@ -340,8 +340,9 @@ h1, h2, h3, h4 {
 ========================================= */
 .about {
     padding: 15vh 4vw;
-    background-color: var(--cream);
-    color: var(--black);
+    /* On utilise le noir de la charte ici pour créer une très légère séparation visuelle avec le fond noir pur */
+    background-color: var(--brand-black);
+    color: var(--cream);
 }
 
 .about-grid {
@@ -371,7 +372,7 @@ h1, h2, h3, h4 {
     line-height: 1.6;
     margin-bottom: 3rem;
     max-width: 500px;
-    color: #333;
+    color: #ccc;
 }
 
 @media (max-width: 992px) {
@@ -381,18 +382,18 @@ h1, h2, h3, h4 {
 .btn-outline {
     display: inline-block;
     padding: 1rem 2.5rem;
-    border: 1px solid var(--black);
+    border: 1px solid var(--cream);
     border-radius: 50px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--black);
+    color: var(--cream);
     transition: all 0.4s var(--ease-out-expo);
 }
 
 .btn-outline:hover {
     background-color: var(--coral);
-    color: var(--white);
+    color: var(--cream);
     border-color: var(--coral);
 }
 
@@ -401,14 +402,14 @@ h1, h2, h3, h4 {
 ========================================= */
 .services {
     padding: 15vh 4vw;
-    background-color: var(--white);
+    background-color: var(--pure-black);
     border-top: 1px solid var(--border-light);
 }
 
 .services-header h2 {
     font-size: clamp(3rem, 7vw, 6rem);
     margin-bottom: 8vh;
-    color: var(--black);
+    color: var(--cream);
 }
 
 .services-list {
@@ -423,7 +424,7 @@ h1, h2, h3, h4 {
 
 .service-item h3 {
     font-size: 1.5rem;
-    color: var(--black);
+    color: var(--cream);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--coral);
@@ -432,7 +433,7 @@ h1, h2, h3, h4 {
 
 .service-item p {
     font-size: 1.1rem;
-    color: #555;
+    color: #999;
     line-height: 1.6;
 }
 
@@ -441,7 +442,7 @@ h1, h2, h3, h4 {
 ========================================= */
 .contact {
     padding: 15vh 4vw 5vh 4vw;
-    background-color: var(--cream);
+    background-color: var(--brand-black);
 }
 
 .contact-grid {
@@ -462,12 +463,12 @@ h1, h2, h3, h4 {
     font-size: clamp(3rem, 6vw, 6rem);
     line-height: 0.9;
     letter-spacing: -2px;
-    color: var(--black);
+    color: var(--cream);
 }
 
 .contact-info .lead {
     font-size: 1.2rem;
-    color: #444;
+    color: #ccc;
     line-height: 1.6;
     max-width: 500px;
 }
@@ -478,7 +479,7 @@ h1, h2, h3, h4 {
 .contact-details p {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: var(--black);
+    color: var(--cream);
 }
 
 .contact-details strong {
@@ -489,19 +490,18 @@ h1, h2, h3, h4 {
 .big-email {
     display: inline-block;
     font-size: clamp(2.5rem, 8vw, 9rem);
-    color: var(--black);
+    color: var(--cream);
     transition: color 0.4s var(--ease-out-expo);
     margin-top: 5vh;
 }
 
 .big-email:hover { color: var(--coral); }
 
-/* Formulaire Light Mode */
+/* Formulaire Dark Mode */
 .contact-form {
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.03);
     padding: 3rem;
     border: 1px solid var(--border-light);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
 }
 
 .form-group { margin-bottom: 2rem; }
@@ -512,8 +512,8 @@ h1, h2, h3, h4 {
     padding: 1rem 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(35, 32, 31, 0.2);
-    color: var(--black);
+    border-bottom: 1px solid rgba(244, 240, 235, 0.3);
+    color: var(--cream);
     font-family: var(--font-text);
     font-size: 1.1rem;
     transition: border-color 0.4s var(--ease-out-expo);
@@ -532,7 +532,7 @@ h1, h2, h3, h4 {
 .btn-primary {
     display: inline-block;
     background-color: var(--coral);
-    color: var(--white);
+    color: var(--cream);
     padding: 1rem 2.5rem;
     font-weight: 800;
     font-size: 1rem;
@@ -545,21 +545,22 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--cream);
+    color: var(--pure-black);
 }
 
-/* Footer Noir pour ancrer le site à la fin */
+/* Footer Noir Pur pour ancrer le site à la fin */
 .footer-grid {
     margin-top: 15vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
-    background-color: var(--black);
+    background-color: var(--pure-black);
     padding: 6vh 4vw;
     margin-left: -4vw;
     margin-right: -4vw;
     margin-bottom: -5vh;
+    border-top: 1px solid var(--border-light);
 }
 
 @media (max-width: 768px) {
@@ -613,7 +614,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95); /* Fond blanc transparent */
+    background: rgba(0, 0, 0, 0.95);
     z-index: 2000;
     display: flex;
     justify-content: center;
@@ -626,8 +627,8 @@ h1, h2, h3, h4 {
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
 
 .modal-content {
-    background: var(--cream);
-    color: var(--black);
+    background: var(--brand-black);
+    color: var(--cream);
     width: 90%;
     max-width: 800px;
     max-height: 90vh;
@@ -637,7 +638,6 @@ h1, h2, h3, h4 {
     transform: translateY(50px);
     transition: transform 0.5s var(--ease-out-expo);
     border: 1px solid var(--border-light);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
 }
 
 .modal-overlay.active .modal-content { transform: translateY(0); }
@@ -651,7 +651,7 @@ h1, h2, h3, h4 {
     font-size: 3rem;
     font-weight: 300;
     cursor: pointer;
-    color: var(--black);
+    color: var(--cream);
     transition: color 0.3s;
 }
 
@@ -668,7 +668,7 @@ h1, h2, h3, h4 {
     margin-bottom: 2rem;
     font-weight: 600;
 }
-.modal-body p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; color: #333; }
+.modal-body p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; color: #ccc; }
 .modal-img-placeholder { width: 100%; aspect-ratio: 16/9; background-color: var(--aubergine); }
 
 /* =========================================
