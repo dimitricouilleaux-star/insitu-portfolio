@@ -74,7 +74,7 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================
-   HEADER & MENU
+   HEADER & MENU (Personnalisé)
 ========================================= */
 .main-header {
     position: fixed;
@@ -107,25 +107,25 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 101; /* S'assure qu'il reste au-dessus de tout */
+    z-index: 101;
 }
 
 .burger-btn span {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--cream); /* Force la couleur claire */
+    background-color: var(--cream);
     transition: transform 0.5s var(--ease-out-expo), opacity 0.5s;
 }
 
 .burger-btn.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .burger-btn.active span:nth-child(2) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Overlay Menu */
+/* Overlay Menu : Fond Aubergine (Violet) */
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background-color: var(--brand-black);
+    background-color: var(--aubergine);
     z-index: 90;
     display: flex;
     align-items: center;
@@ -151,15 +151,14 @@ h1, h2, h3, h4 {
     display: inline-block;
     color: var(--cream);
     transition: color 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo);
-    /* La solution : on ajoute de l'espace à droite pour éviter la coupure au survol */
     padding-right: 40px; 
 }
 
+/* Survol des titres du menu en Rouge Corail (Rose vif) */
 .menu-link:hover {
     color: var(--coral);
     transform: translateX(20px);
 }
-
 /* =========================================
    SECTION HERO
 ========================================= */
